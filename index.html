@@ -10,13 +10,13 @@
          editor.insertInto(document.getElementById('editorContainer'));
  }
  function outputResult() {
- 	document.getElementById("result").value = editor.getMathML();
+ 	document.getElementById("result").setAttribute("value", editor.getMathML());
  }
  </script>
 </head>
 <body>
  <div id="editorContainer"></div>
  <button onclick="outputResult();"></button>
- <input id="result" style="display: none;" value="">
+ <textarea id="result" style="display: none;" value=""></textarea>
 </body>
 </html>
