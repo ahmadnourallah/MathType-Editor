@@ -9,6 +9,7 @@
  window.onload = function () {
    	editor = com.wiris.jsEditor.JsEditor.newInstance({'language': 'ar'});
    	editor.insertInto(document.getElementById('editorContainer'));
+ };
  function outputResult() {
  	document.getElementById("result").setAttribute("value", editor.getMathML());
  }
