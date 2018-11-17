@@ -1,13 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
+<meta charset="utf-8">
 <head>
  <script src="https://www.wiris.net/demo/editor/editor"></script>
  <script>
  var editor;
  window.onload = function () {
-   editor = com.wiris.jsEditor.JsEditor.newInstance({'language': 'en'});
-         editor.insertInto(document.getElementById('editorContainer'));
+   	editor = com.wiris.jsEditor.JsEditor.newInstance({'language': 'ar'});
+   	editor.insertInto(document.getElementById('editorContainer'));
+ 	editor.addEditorListener ({
+		contentChanged: function (instance) {
+	       document.getElementById('result').setAttribute("value", editor.getMathML());
+	     }
+ 	});
  }
  function outputResult() {
  	document.getElementById("result").setAttribute("value", editor.getMathML());
@@ -16,7 +22,9 @@
 </head>
 <body>
  <div id="editorContainer"></div>
- <button onclick="outputResult();"></button>
+<!--  <div style="text-align: center;">
+ 	<button style="right: 19" onclick="outputResult();">إخراج البيانات</button>
+ </div> -->
  <textarea id="result" style="display: none;" value=""></textarea>
 </body>
 </html>
