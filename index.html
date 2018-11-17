@@ -9,10 +9,11 @@
  window.onload = function () {
    	editor = com.wiris.jsEditor.JsEditor.newInstance({'language': 'ar'});
    	editor.insertInto(document.getElementById('editorContainer'));
- 	editor.addHandListener ({
-		contentChanged: function (instance) {
-	       document.getElementById('result').setAttribute("value", editor.getMathML());
-	     }
+	editor.element.addEventListener ({
+	    contentChanged: function (instance) {
+		alert("h");
+	    },
+	    strokesChanged: function(instance) {}
  	});
  }
  function outputResult() {
