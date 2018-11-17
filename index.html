@@ -9,13 +9,6 @@
  window.onload = function () {
    	editor = com.wiris.jsEditor.JsEditor.newInstance({'language': 'ar'});
    	editor.insertInto(document.getElementById('editorContainer'));
-	editor.element.addEventListener ({
-	    contentChanged: function (instance) {
-		alert("h");
-	    },
-	    strokesChanged: function(instance) {}
- 	});
- }
  function outputResult() {
  	document.getElementById("result").setAttribute("value", editor.getMathML());
  }
@@ -23,9 +16,9 @@
 </head>
 <body>
  <div id="editorContainer"></div>
-<!--  <div style="text-align: center;">
+ <div style="text-align: center;">
  	<button style="right: 19" onclick="outputResult();">إخراج البيانات</button>
- </div> -->
+ </div>
  <textarea id="result" style="display: none;" value=""></textarea>
 </body>
 </html>
